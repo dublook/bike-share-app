@@ -1,0 +1,14 @@
+[ignore]
+.*/node_modules/.*
+[include]
+
+[libs]
+# Immutable.jsの型定義ファイル
+./node_modules/immutable/dist/immutable.js.flow
+
+
+[lints]
+
+[options]
+
+[strict]

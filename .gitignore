@@ -1,0 +1,13 @@
+node_modules/**/*
+.expo/*
+npm-debug.*
+package-lock.json
+
+packages/**/node_modules/**/*
+packages/**/.expo/*
+packages/**/npm-debug.*
+packages/**/package-lock.json
+
+lerna-debug.log
+
+.DS_Store
