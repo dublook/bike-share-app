@@ -20,15 +20,8 @@ type State = {
   isReady: boolean,
 }
 class MapContainer extends React.Component<Props, State> {
-  static navigationOptions = ({ navigation }) => ({
+  static navigationOptions = () => ({
     headerTitle: <Title title="近くのチャリ" />,
-    // headerRight: (
-    //   <MapButton
-    //     onPress={() => {
-    //       navigation.navigate('MapPage');
-    //     }}
-    //   />
-    // ),
   });
 
   state = {
@@ -44,7 +37,7 @@ class MapContainer extends React.Component<Props, State> {
     this._getLocationAsync();
   }
 
-  handleItemPress = (id: string, name: string) => {
+  handleCalloutPress = (id: string, name: string) => {
     this.props.navigation.navigate('DetailPage', {
       id, name,
     });
@@ -78,14 +71,16 @@ class MapContainer extends React.Component<Props, State> {
   render() {
     const {
       isLoading,
+      data,
     } = this.props;
     return (
       <MapScreen
+        stations={data}
         isLoading={isLoading}
         isReady={this.state.isReady}
         navigation={this.props.navigation}
         list={this.props.data}
-        onItemPress={this.handleItemPress}
+        onCalloutPress={this.handleCalloutPress}
         coords={this.state.coords}
       />
     );

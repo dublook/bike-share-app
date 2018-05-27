@@ -1,10 +1,18 @@
 [
     {
       "id": "1",
-      "name": "Ark Hills"
+      "name": "Ark Hills",
+      "coords": {
+        "latitude": 35.662306,
+        "longitude": 139.695667
+      }
     },
     {
       "id": "2",
-      "name": "六本木ヒルズ"
+      "name": "六本木ヒルズ",
+      "coords": {
+        "latitude": 35.6603943,
+        "longitude": 139.7073059
+      }  
     }
   ]
