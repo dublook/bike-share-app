@@ -6,7 +6,7 @@ import { Root } from 'native-base';
 import AppContainer from './container/AppContainer';
 import Login from './container/LoginContainer';
 import { ListContainer, MapContainer } from './container/HomeContainer';
-import BookingContainer from './container/BookingContainer';
+import { StationDetailPage } from './container/BookingContainer';
 import BlankPage from './container/BlankPageContainer';
 import Sidebar from './container/SidebarContainer';
 
@@ -26,7 +26,8 @@ const SearchStack = createStackNavigator(
 
 const BookingStack = createStackNavigator(
   {
-    DetailPage: { screen: BookingContainer },
+    DetailPage: { screen: StationDetailPage },
+    BookingPage: { screen: BlankPage },
   },
   {
     initialRouteName: 'DetailPage',

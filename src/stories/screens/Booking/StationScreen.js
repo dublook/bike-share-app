@@ -3,6 +3,7 @@ import {
   Container,
   Content,
   Text,
+  Footer,
 } from 'native-base';
 import {
   BSSpinner,
@@ -11,9 +12,10 @@ import {
 
 type Props = {
   isLoading: boolean,
+  onBookingPress: Function,
 }
 export default ({
-  isLoading,
+  isLoading, onBookingPress,
 }:Props) => (
   <Container>
     {
@@ -22,10 +24,15 @@ export default ({
       :
         <Container>
           <Content>
-            <FloatingButton>
+            <Text>Station Name</Text>
+          </Content>
+          <Footer>
+            <FloatingButton
+              onPress={onBookingPress}
+            >
               <Text>Book This!</Text>
             </FloatingButton>
-          </Content>
+          </Footer>
         </Container>
     }
   </Container>
