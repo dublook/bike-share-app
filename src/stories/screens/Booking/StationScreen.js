@@ -16,25 +16,24 @@ type Props = {
 }
 export default ({
   isLoading, onBookingPress,
-}:Props) => (
-  <Container>
-    {
-      isLoading ?
-        <BSSpinner />
-      :
-        <Container>
-          <Content>
-            <Text>Station Name</Text>
-          </Content>
-          <Footer>
-            <FloatingButton
-              onPress={onBookingPress}
-            >
-              <Text>Book This!</Text>
-            </FloatingButton>
-          </Footer>
-        </Container>
-    }
-  </Container>
-);
+}:Props) => {
+  if (isLoading) {
+    return <BSSpinner />;
+  }
+
+  return (
+    <Container>
+      <Content>
+        <Text>Station Name</Text>
+      </Content>
+      <Footer>
+        <FloatingButton
+          onPress={onBookingPress}
+        >
+          <Text>Book This!</Text>
+        </FloatingButton>
+      </Footer>
+    </Container>
+  );
+};
 

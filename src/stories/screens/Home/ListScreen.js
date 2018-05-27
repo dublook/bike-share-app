@@ -10,7 +10,6 @@ import {
   View,
 } from 'native-base';
 
-import styles from './styles';
 
 import MapScreen from './MapScreen';
 
@@ -29,7 +28,7 @@ export default({
     );
   }
   return (
-    <Container style={styles.container}>
+    <Container>
       <Content>
         <Text>{`あなたの場所は${coords.latitude},${coords.longitude}`}</Text>
         <List>
