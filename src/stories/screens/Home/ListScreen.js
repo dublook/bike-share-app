@@ -36,10 +36,10 @@ export default({
           {list.map(item => (
             <ListItem
               key={item.id}
-              onPress={() => onItemPress({
-                id: item.id,
-                name: item.name,
-              })}
+              onPress={() => onItemPress(
+                item.id,
+                item.name,
+              )}
             >
               <Text>{item.name}</Text>
             </ListItem>

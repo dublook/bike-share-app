@@ -6,6 +6,7 @@ import { Root } from 'native-base';
 import AppContainer from './container/AppContainer';
 import Login from './container/LoginContainer';
 import { ListContainer, MapContainer } from './container/HomeContainer';
+import BookingContainer from './container/BookingContainer';
 import BlankPage from './container/BlankPageContainer';
 import Sidebar from './container/SidebarContainer';
 
@@ -13,15 +14,36 @@ const stackNavigationOptions = {
   gesturesEnabled: true,
 };
 
+const SearchStack = createStackNavigator(
+  {
+    ListPage: { screen: ListContainer },
+    MapPage: { screen: MapContainer },
+  },
+  {
+    navigationOptions: stackNavigationOptions,
+  },
+);
+
+const BookingStack = createStackNavigator(
+  {
+    DetailPage: { screen: BookingContainer },
+  },
+  {
+    initialRouteName: 'DetailPage',
+    navigationOptions: stackNavigationOptions,
+  },
+);
+
 const HomeStack = createStackNavigator(
   {
-    Home: { screen: ListContainer },
-    MapPage: { screen: MapContainer },
-    DetailPage: { screen: BlankPage },
+    Home: { screen: SearchStack },
+    BookingStack: { screen: BookingStack },
   },
   {
     initialRouteName: 'Home',
-    NavigationOptions: stackNavigationOptions,
+    mode: 'modal',
+    navigationOptions: stackNavigationOptions,
+    headerMode: 'nonde',
   },
 );
 

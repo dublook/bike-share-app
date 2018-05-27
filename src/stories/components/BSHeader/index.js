@@ -42,7 +42,7 @@ export const CloseButton = ({
   onPress = () => {
     NavigationActions.init({
       index: 0,
-      actions: [navigation.navigate({ routeName: closeRouteName })],
+      actions: [navigation.navigate(closeRouteName)],
     });
   },
 }:CloseButtonProps) => (
